@@ -42,7 +42,6 @@
     padding: env(safe-area-inset-top) 0 env(safe-area-inset-bottom);
   }
 
-  /* Header */
   .header {
     padding: 28px 20px 16px;
     text-align: center;
@@ -61,12 +60,8 @@
     margin-bottom: 4px;
   }
 
-  .header p {
-    font-size: 13px;
-    color: var(--muted);
-  }
+  .header p { font-size: 13px; color: var(--muted); }
 
-  /* Porcentaje config */
   .pct-bar {
     display: flex;
     align-items: center;
@@ -95,7 +90,6 @@
   .pct-vos { background: rgba(232,168,124,0.15); color: var(--accent1); }
   .pct-ella { background: rgba(124,159,232,0.15); color: var(--accent2); }
 
-  /* Tabs */
   .tabs {
     display: flex;
     gap: 0;
@@ -119,11 +113,9 @@
   .tab.active-fijo { color: var(--fijo-color); border-color: var(--fijo-color); }
   .tab.active-var  { color: var(--var-color);  border-color: var(--var-color); }
 
-  /* Secciones */
   .section { padding: 16px 20px; display: none; }
   .section.active { display: block; }
 
-  /* Formulario agregar */
   .form-card {
     background: var(--surface);
     border: 1px solid var(--border);
@@ -161,7 +153,6 @@
   }
 
   input:focus, select:focus { border-color: var(--accent1); }
-
   select option { background: var(--surface2); }
 
   .btn-add {
@@ -181,7 +172,6 @@
   .btn-fijo { background: var(--fijo-color); color: #1a1009; }
   .btn-var  { background: var(--var-color);  color: #0e1526; }
 
-  /* Balance card */
   .balance-card {
     border-radius: var(--radius);
     padding: 16px;
@@ -232,7 +222,6 @@
   .deuda-vos { background: rgba(232,124,124,0.12); color: var(--red); }
   .deuda-ella{ background: rgba(124,232,160,0.12); color: var(--green); }
 
-  /* Lista items */
   .list-title {
     font-size: 13px;
     font-weight: 600;
@@ -278,12 +267,7 @@
   }
   .btn-del:hover { color: var(--red); }
 
-  /* Fijo específico: split visual */
-  .split-row {
-    display: flex;
-    gap: 6px;
-    margin-top: 4px;
-  }
+  .split-row { display: flex; gap: 6px; margin-top: 4px; }
 
   .split-pill {
     font-size: 11px;
@@ -295,7 +279,6 @@
   .split-pill.vos  { background: rgba(232,168,124,0.15); color: var(--accent1); }
   .split-pill.ella { background: rgba(124,159,232,0.15); color: var(--accent2); }
 
-  /* Estado de conexión */
   .status-dot {
     display: inline-block;
     width: 7px; height: 7px;
@@ -313,16 +296,164 @@
 
   .empty-state span { display: block; font-size: 28px; margin-bottom: 8px; }
 
-  /* Mes selector */
-  .mes-row {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 14px;
+  /* ===== CERRAR MES ===== */
+  .cerrar-mes-btn {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid rgba(232,124,124,0.4);
+    border-radius: 12px;
+    background: rgba(232,124,124,0.08);
+    color: var(--red);
+    font-family: var(--font);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 8px;
+    margin-bottom: 24px;
+    transition: all 0.2s;
+  }
+  .cerrar-mes-btn:active { opacity: 0.75; }
+
+  /* ===== HISTORIAL DE MESES ===== */
+  .historial-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.75);
+    z-index: 200;
+    align-items: flex-end;
+  }
+  .historial-overlay.open { display: flex; }
+
+  .historial-sheet {
+    background: var(--surface);
+    border-radius: 24px 24px 0 0;
+    padding: 24px 20px 40px;
+    width: 100%;
+    border-top: 1px solid var(--border);
+    max-height: 85vh;
+    overflow-y: auto;
   }
 
-  .mes-row select { flex: 1; }
-  .mes-row label { font-size: 13px; color: var(--muted); white-space: nowrap; }
+  .historial-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .historial-header h3 { font-family: var(--serif); font-size: 22px; }
+
+  .btn-cerrar-sheet {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    width: 32px; height: 32px;
+    color: var(--muted);
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mes-archivado {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 14px;
+    margin-bottom: 10px;
+  }
+
+  .mes-archivado-titulo {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--text);
+    text-transform: capitalize;
+  }
+
+  .mes-archivado-fila {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    color: var(--muted);
+    padding: 3px 0;
+  }
+
+  .mes-archivado-fila span:last-child { color: var(--text); font-weight: 500; }
+
+  .mes-archivado-deuda {
+    margin-top: 8px;
+    padding: 7px 10px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 500;
+    text-align: center;
+  }
+
+  /* ===== CONFIRMAR CERRAR MES ===== */
+  .confirm-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.8);
+    z-index: 300;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  .confirm-overlay.open { display: flex; }
+
+  .confirm-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 24px;
+    width: 100%;
+    max-width: 360px;
+  }
+
+  .confirm-card h3 {
+    font-family: var(--serif);
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+
+  .confirm-card p {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+
+  .confirm-btns { display: flex; gap: 10px; }
+
+  .btn-cancelar {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: transparent;
+    color: var(--muted);
+    font-family: var(--font);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .btn-confirmar {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: var(--red);
+    color: #fff;
+    font-family: var(--font);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+  }
 
   /* Config overlay */
   .config-overlay {
@@ -345,13 +476,20 @@
   }
 
   .config-sheet h3 { font-family: var(--serif); font-size: 22px; margin-bottom: 16px; }
-
   .config-sheet label { font-size: 13px; color: var(--muted); display: block; margin-bottom: 6px; margin-top: 14px; }
 
-  .btn-config {
+  /* Botones fijos abajo */
+  .bottom-btns {
     position: fixed;
     bottom: calc(24px + env(safe-area-inset-bottom));
     right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 50;
+  }
+
+  .btn-config, .btn-historial {
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: 50%;
@@ -361,7 +499,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 50;
     box-shadow: 0 4px 20px rgba(0,0,0,0.4);
   }
 
@@ -389,6 +526,13 @@
     margin: 16px 20px;
     line-height: 1.6;
   }
+
+  .loading-historial {
+    text-align: center;
+    padding: 20px;
+    color: var(--muted);
+    font-size: 14px;
+  }
 </style>
 </head>
 <body>
@@ -399,9 +543,8 @@
   <p><span class="status-dot" id="statusDot"></span><span id="statusText">Conectando...</span></p>
 </div>
 
-<!-- Aviso si no hay Firebase -->
 <div class="no-firebase" id="noFirebaseMsg" style="display:none">
-  ⚠️ Todavía no está configurado Firebase. Los datos no se guardarán entre sesiones. Seguí las instrucciones que te dio Claude para configurarlo.
+  ⚠️ Todavía no está configurado Firebase. Los datos no se guardarán entre sesiones.
 </div>
 
 <!-- Porcentaje -->
@@ -432,15 +575,14 @@
     <button class="btn-add btn-fijo" onclick="agregarFijo()">+ Agregar gasto fijo</button>
   </div>
 
-  <!-- Balance fijos -->
   <div class="balance-card balance-fijo" id="balanceFijos">
     <div class="balance-title">Balance — Gastos fijos</div>
     <div class="balance-row">
-      <span class="balance-name vos">Vos</span>
+      <span class="balance-name vos" id="labelFijoVos">Vos</span>
       <span class="balance-amount vos" id="totalFijoVos">$0</span>
     </div>
     <div class="balance-row">
-      <span class="balance-name ella">Ella</span>
+      <span class="balance-name ella" id="labelFijoElla">Ella</span>
       <span class="balance-amount ella" id="totalFijoElla">$0</span>
     </div>
     <div class="deuda-box deuda-ok" id="deudaFijos">Sin gastos aún</div>
@@ -448,6 +590,8 @@
 
   <div class="list-title">Gastos del mes</div>
   <div id="listaFijos"><div class="empty-state"><span>🏠</span>Todavía no hay gastos fijos</div></div>
+
+  <button class="cerrar-mes-btn" onclick="confirmarCerrarMes()">📦 Cerrar mes y empezar de cero</button>
 </div>
 
 <!-- ===== SECCIÓN VARIABLES ===== -->
@@ -468,15 +612,14 @@
     <button class="btn-add btn-var" onclick="agregarVariable()">+ Agregar gasto variable</button>
   </div>
 
-  <!-- Balance variables -->
   <div class="balance-card balance-var" id="balanceVars">
     <div class="balance-title">Balance — Gastos variables</div>
     <div class="balance-row">
-      <span class="balance-name vos">Vos</span>
+      <span class="balance-name vos" id="labelVarVos">Vos</span>
       <span class="balance-amount vos" id="totalVarVos">$0</span>
     </div>
     <div class="balance-row">
-      <span class="balance-name ella">Ella</span>
+      <span class="balance-name ella" id="labelVarElla">Ella</span>
       <span class="balance-amount ella" id="totalVarElla">$0</span>
     </div>
     <div class="deuda-box deuda-ok" id="deudaVars">Sin gastos aún</div>
@@ -486,8 +629,34 @@
   <div id="listaVars"><div class="empty-state"><span>🛒</span>Todavía no hay gastos variables</div></div>
 </div>
 
-<!-- Botón config -->
-<button class="btn-config" onclick="abrirConfig()">⚙️</button>
+<!-- Botones flotantes -->
+<div class="bottom-btns">
+  <button class="btn-historial" onclick="abrirHistorial()" title="Ver meses anteriores">📅</button>
+  <button class="btn-config" onclick="abrirConfig()" title="Configuración">⚙️</button>
+</div>
+
+<!-- Confirmar cerrar mes -->
+<div class="confirm-overlay" id="confirmOverlay">
+  <div class="confirm-card">
+    <h3>📦 Cerrar mes</h3>
+    <p>Se va a guardar un resumen del mes actual en el historial y se van a borrar todos los gastos para empezar de cero. ¿Confirmás?</p>
+    <div class="confirm-btns">
+      <button class="btn-cancelar" onclick="cerrarConfirm()">Cancelar</button>
+      <button class="btn-confirmar" onclick="cerrarMes()">Cerrar mes</button>
+    </div>
+  </div>
+</div>
+
+<!-- Historial de meses -->
+<div class="historial-overlay" id="historialOverlay" onclick="cerrarHistorialClick(event)">
+  <div class="historial-sheet">
+    <div class="historial-header">
+      <h3>📅 Meses anteriores</h3>
+      <button class="btn-cerrar-sheet" onclick="cerrarHistorial()">✕</button>
+    </div>
+    <div id="historialContenido"><div class="loading-historial">Cargando...</div></div>
+  </div>
+</div>
 
 <!-- Config sheet -->
 <div class="config-overlay" id="configOverlay" onclick="cerrarConfig(event)">
@@ -503,9 +672,6 @@
 </div>
 
 <script>
-// ============================================================
-// FIREBASE CONFIG — REEMPLAZÁ ESTOS VALORES CON LOS TUYOS
-// ============================================================
 const firebaseConfig = {
   apiKey: "AIzaSyAkl86S-gfcmCR0-jaLBhZg4McNeC0RAss",
   authDomain: "gastos-pareja-5c18c.firebaseapp.com",
@@ -514,12 +680,10 @@ const firebaseConfig = {
   messagingSenderId: "600607581181",
   appId: "1:600607581181:web:11e884f974dae56cd3ef94"
 };
-// ============================================================
 
 let db = null;
 let firebaseOk = false;
 
-// Inicializar Firebase
 try {
   firebase.initializeApp(firebaseConfig);
   db = firebase.firestore();
@@ -528,25 +692,28 @@ try {
   console.warn("Firebase no configurado:", e);
 }
 
-// Estado local
 let fijos = [];
 let variables = [];
 let pctVos = 60;
 let nombreVos = "Vos";
 let nombreElla = "Ella";
 
-// Mes actual como ID de documento
 const mesId = () => {
   const d = new Date();
   return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}`;
 };
 
-// Formatear $
 const fmt = n => '$' + Number(n).toLocaleString('es-AR');
+
+const nombreMes = (id) => {
+  const [anio, mes] = id.split('-');
+  const fecha = new Date(parseInt(anio), parseInt(mes) - 1, 1);
+  return fecha.toLocaleDateString('es-AR', { month: 'long', year: 'numeric' });
+};
 
 // ======== FIREBASE ========
 async function cargarDatos() {
-  if (!firebaseOk || firebaseConfig.apiKey === "TU_API_KEY") {
+  if (!firebaseOk) {
     document.getElementById('noFirebaseMsg').style.display = 'block';
     document.getElementById('statusDot').style.background = '#e87c7c';
     document.getElementById('statusText').textContent = 'Sin conexión';
@@ -557,7 +724,6 @@ async function cargarDatos() {
   document.getElementById('statusText').textContent = 'Conectando...';
 
   try {
-    // Config
     const cfgDoc = await db.collection('config').doc('general').get();
     if (cfgDoc.exists) {
       const cfg = cfgDoc.data();
@@ -568,7 +734,6 @@ async function cargarDatos() {
       actualizarPct(pctVos, false);
     }
 
-    // Escuchar fijos en tiempo real
     db.collection('gastos').doc(mesId()).collection('fijos')
       .orderBy('fecha', 'desc')
       .onSnapshot(snap => {
@@ -576,7 +741,6 @@ async function cargarDatos() {
         renderFijos();
       });
 
-    // Escuchar variables en tiempo real
     db.collection('gastos').doc(mesId()).collection('variables')
       .orderBy('fecha', 'desc')
       .onSnapshot(snap => {
@@ -594,36 +758,150 @@ async function cargarDatos() {
 }
 
 async function guardarFijo(item) {
-  if (!firebaseOk || firebaseConfig.apiKey === "TU_API_KEY") return;
+  if (!firebaseOk) return;
   await db.collection('gastos').doc(mesId()).collection('fijos').add(item);
 }
 
 async function guardarVariable(item) {
-  if (!firebaseOk || firebaseConfig.apiKey === "TU_API_KEY") return;
+  if (!firebaseOk) return;
   await db.collection('gastos').doc(mesId()).collection('variables').add(item);
 }
 
 async function borrarFijo(id) {
-  if (!firebaseOk || firebaseConfig.apiKey === "TU_API_KEY") {
-    fijos = fijos.filter(f => f.id !== id);
-    renderFijos();
-    return;
-  }
+  if (!firebaseOk) { fijos = fijos.filter(f => f.id !== id); renderFijos(); return; }
   await db.collection('gastos').doc(mesId()).collection('fijos').doc(id).delete();
 }
 
 async function borrarVariable(id) {
-  if (!firebaseOk || firebaseConfig.apiKey === "TU_API_KEY") {
-    variables = variables.filter(v => v.id !== id);
-    renderVars();
-    return;
-  }
+  if (!firebaseOk) { variables = variables.filter(v => v.id !== id); renderVars(); return; }
   await db.collection('gastos').doc(mesId()).collection('variables').doc(id).delete();
 }
 
 async function guardarConfigFirebase() {
-  if (!firebaseOk || firebaseConfig.apiKey === "TU_API_KEY") return;
+  if (!firebaseOk) return;
   await db.collection('config').doc('general').set({ pctVos, nombreVos, nombreElla });
+}
+
+// ======== CERRAR MES ========
+function confirmarCerrarMes() {
+  document.getElementById('confirmOverlay').classList.add('open');
+}
+
+function cerrarConfirm() {
+  document.getElementById('confirmOverlay').classList.remove('open');
+}
+
+async function cerrarMes() {
+  if (!firebaseOk) { alert('Sin conexión a Firebase'); return; }
+
+  cerrarConfirm();
+
+  // Calcular totales actuales
+  const pctElla = 100 - pctVos;
+  let totalFijoVos = 0, totalFijoElla = 0;
+  fijos.forEach(f => {
+    totalFijoVos += f.monto * pctVos / 100;
+    totalFijoElla += f.monto * pctElla / 100;
+  });
+
+  let totalVarVos = 0, totalVarElla = 0;
+  variables.forEach(v => {
+    if (v.quien === 'vos') totalVarVos += v.monto;
+    else totalVarElla += v.monto;
+  });
+
+  // Armar resumen
+  const resumen = {
+    mesId: mesId(),
+    fechaCierre: new Date().toISOString(),
+    pctVos,
+    nombreVos,
+    nombreElla,
+    fijos: fijos.map(f => ({ nombre: f.nombre, monto: f.monto })),
+    variables: variables.map(v => ({ nombre: v.nombre, monto: v.monto, quien: v.quien })),
+    totales: {
+      fijoVos: totalFijoVos,
+      fijoElla: totalFijoElla,
+      varVos: totalVarVos,
+      varElla: totalVarElla,
+    }
+  };
+
+  // Guardar en historial
+  await db.collection('historial').doc(mesId()).set(resumen);
+
+  // Borrar gastos del mes actual
+  const batch = db.batch();
+
+  const fijosDocs = await db.collection('gastos').doc(mesId()).collection('fijos').get();
+  fijosDocs.forEach(d => batch.delete(d.ref));
+
+  const varsDocs = await db.collection('gastos').doc(mesId()).collection('variables').get();
+  varsDocs.forEach(d => batch.delete(d.ref));
+
+  await batch.commit();
+
+  alert('✅ Mes cerrado. Pueden empezar a cargar el mes nuevo.');
+}
+
+// ======== HISTORIAL ========
+async function abrirHistorial() {
+  document.getElementById('historialOverlay').classList.add('open');
+  const contenido = document.getElementById('historialContenido');
+  contenido.innerHTML = '<div class="loading-historial">Cargando historial...</div>';
+
+  try {
+    const snap = await db.collection('historial').orderBy('fechaCierre', 'desc').get();
+
+    if (snap.empty) {
+      contenido.innerHTML = '<div class="loading-historial">Todavía no hay meses cerrados.</div>';
+      return;
+    }
+
+    contenido.innerHTML = snap.docs.map(doc => {
+      const d = doc.data();
+      const nv = d.nombreVos || 'Vos';
+      const ne = d.nombreElla || 'Ella';
+      const t = d.totales;
+      const diffFijo = t.fijoVos - t.fijoElla;
+      const diffVar = t.varVos - t.varElla;
+      const diffTotal = (t.fijoVos + t.varVos) - (t.fijoElla + t.varElla);
+
+      const deudaColor = Math.abs(diffTotal) < 1 ? 'deuda-ok' : (diffTotal > 0 ? 'deuda-ella' : 'deuda-vos');
+      const deudaTexto = Math.abs(diffTotal) < 1
+        ? '✓ Quedaron iguales'
+        : diffTotal > 0
+          ? `${ne} le debía ${fmt(Math.abs(diffTotal))} a ${nv}`
+          : `${nv} le debía ${fmt(Math.abs(diffTotal))} a ${ne}`;
+
+      return `
+        <div class="mes-archivado">
+          <div class="mes-archivado-titulo">📅 ${nombreMes(d.mesId)}</div>
+          <div class="mes-archivado-fila"><span>Fijos — ${nv}</span><span>${fmt(t.fijoVos)}</span></div>
+          <div class="mes-archivado-fila"><span>Fijos — ${ne}</span><span>${fmt(t.fijoElla)}</span></div>
+          <div class="mes-archivado-fila"><span>Variables — ${nv}</span><span>${fmt(t.varVos)}</span></div>
+          <div class="mes-archivado-fila"><span>Variables — ${ne}</span><span>${fmt(t.varElla)}</span></div>
+          <div class="mes-archivado-fila" style="border-top:1px solid var(--border);margin-top:8px;padding-top:8px;font-weight:600">
+            <span>Total ${nv}</span><span style="color:var(--accent1)">${fmt(t.fijoVos + t.varVos)}</span>
+          </div>
+          <div class="mes-archivado-fila" style="font-weight:600">
+            <span>Total ${ne}</span><span style="color:var(--accent2)">${fmt(t.fijoElla + t.varElla)}</span>
+          </div>
+          <div class="mes-archivado-deuda deuda-box ${deudaColor}">${deudaTexto}</div>
+        </div>`;
+    }).join('');
+  } catch(e) {
+    contenido.innerHTML = '<div class="loading-historial">Error al cargar el historial.</div>';
+    console.error(e);
+  }
+}
+
+function cerrarHistorial() {
+  document.getElementById('historialOverlay').classList.remove('open');
+}
+
+function cerrarHistorialClick(e) {
+  if (e.target === document.getElementById('historialOverlay')) cerrarHistorial();
 }
 
 // ======== UI ========
@@ -655,17 +933,9 @@ function agregarFijo() {
   const nombre = document.getElementById('fijoNombre').value.trim();
   const monto = parseFloat(document.getElementById('fijoMonto').value);
   if (!nombre || !monto || monto <= 0) { alert('Completá nombre y monto'); return; }
-
   const item = { nombre, monto, fecha: new Date().toISOString() };
-
-  if (!firebaseOk || firebaseConfig.apiKey === "TU_API_KEY") {
-    item.id = Date.now().toString();
-    fijos.unshift(item);
-    renderFijos();
-  } else {
-    guardarFijo(item);
-  }
-
+  if (!firebaseOk) { item.id = Date.now().toString(); fijos.unshift(item); renderFijos(); }
+  else { guardarFijo(item); }
   document.getElementById('fijoNombre').value = '';
   document.getElementById('fijoMonto').value = '';
 }
@@ -675,17 +945,9 @@ function agregarVariable() {
   const monto = parseFloat(document.getElementById('varMonto').value);
   const quien = document.getElementById('varQuien').value;
   if (!nombre || !monto || monto <= 0) { alert('Completá nombre y monto'); return; }
-
   const item = { nombre, monto, quien, fecha: new Date().toISOString() };
-
-  if (!firebaseOk || firebaseConfig.apiKey === "TU_API_KEY") {
-    item.id = Date.now().toString();
-    variables.unshift(item);
-    renderVars();
-  } else {
-    guardarVariable(item);
-  }
-
+  if (!firebaseOk) { item.id = Date.now().toString(); variables.unshift(item); renderVars(); }
+  else { guardarVariable(item); }
   document.getElementById('varNombre').value = '';
   document.getElementById('varMonto').value = '';
 }
@@ -693,6 +955,9 @@ function agregarVariable() {
 function renderFijos() {
   const pctElla = 100 - pctVos;
   let totalVos = 0, totalElla = 0;
+
+  document.getElementById('labelFijoVos').textContent = nombreVos;
+  document.getElementById('labelFijoElla').textContent = nombreElla;
 
   const lista = document.getElementById('listaFijos');
   if (fijos.length === 0) {
@@ -733,6 +998,9 @@ function renderFijos() {
 
 function renderVars() {
   let totalVos = 0, totalElla = 0;
+
+  document.getElementById('labelVarVos').textContent = nombreVos;
+  document.getElementById('labelVarElla').textContent = nombreElla;
 
   const lista = document.getElementById('listaVars');
   if (variables.length === 0) {
@@ -806,7 +1074,6 @@ function guardarConfig() {
   document.getElementById('configOverlay').classList.remove('open');
 }
 
-// Arrancar
 cargarDatos();
 </script>
 </body>
