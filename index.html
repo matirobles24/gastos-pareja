@@ -52,14 +52,7 @@
     z-index: 10;
   }
 
-  .header h1 {
-    font-family: var(--serif);
-    font-size: 26px;
-    letter-spacing: -0.5px;
-    color: var(--text);
-    margin-bottom: 4px;
-  }
-
+  .header h1 { font-family: var(--serif); font-size: 26px; letter-spacing: -0.5px; color: var(--text); margin-bottom: 4px; }
   .header p { font-size: 13px; color: var(--muted); }
 
   .pct-bar {
@@ -72,12 +65,7 @@
   }
 
   .pct-bar label { font-size: 12px; color: var(--muted); white-space: nowrap; }
-
-  .pct-bar input[type=range] {
-    flex: 1;
-    accent-color: var(--accent1);
-    height: 4px;
-  }
+  .pct-bar input[type=range] { flex: 1; accent-color: var(--accent1); height: 4px; }
 
   .pct-badge {
     font-size: 12px;
@@ -86,15 +74,10 @@
     border-radius: 20px;
     white-space: nowrap;
   }
-
-  .pct-vos { background: rgba(232,168,124,0.15); color: var(--accent1); }
+  .pct-vos  { background: rgba(232,168,124,0.15); color: var(--accent1); }
   .pct-ella { background: rgba(124,159,232,0.15); color: var(--accent2); }
 
-  .tabs {
-    display: flex;
-    gap: 0;
-    padding: 16px 20px 0;
-  }
+  .tabs { display: flex; gap: 0; padding: 16px 20px 0; }
 
   .tab {
     flex: 1;
@@ -133,11 +116,7 @@
     margin-bottom: 12px;
   }
 
-  .form-row {
-    display: flex;
-    gap: 8px;
-    margin-bottom: 8px;
-  }
+  .form-row { display: flex; gap: 8px; margin-bottom: 8px; }
 
   input[type=text], input[type=number], select {
     background: var(--surface2);
@@ -167,7 +146,6 @@
     margin-top: 4px;
     transition: opacity 0.2s;
   }
-
   .btn-add:active { opacity: 0.75; }
   .btn-fijo { background: var(--fijo-color); color: #1a1009; }
   .btn-var  { background: var(--var-color);  color: #0e1526; }
@@ -178,7 +156,6 @@
     margin-bottom: 16px;
     border: 1px solid var(--border);
   }
-
   .balance-fijo { background: rgba(232,168,124,0.07); border-color: rgba(232,168,124,0.25); }
   .balance-var  { background: rgba(124,159,232,0.07); border-color: rgba(124,159,232,0.25); }
 
@@ -198,15 +175,13 @@
     padding: 8px 0;
     border-bottom: 1px solid var(--border);
   }
-
   .balance-row:last-child { border: none; }
 
   .balance-name { font-size: 14px; font-weight: 500; }
   .balance-amount { font-family: var(--serif); font-size: 20px; }
-
-  .balance-name.vos { color: var(--accent1); }
-  .balance-name.ella { color: var(--accent2); }
-  .balance-amount.vos { color: var(--accent1); }
+  .balance-name.vos   { color: var(--accent1); }
+  .balance-name.ella  { color: var(--accent2); }
+  .balance-amount.vos  { color: var(--accent1); }
   .balance-amount.ella { color: var(--accent2); }
 
   .deuda-box {
@@ -217,10 +192,9 @@
     font-weight: 500;
     text-align: center;
   }
-
-  .deuda-ok  { background: rgba(124,232,160,0.12); color: var(--green); }
-  .deuda-vos { background: rgba(232,124,124,0.12); color: var(--red); }
-  .deuda-ella{ background: rgba(124,232,160,0.12); color: var(--green); }
+  .deuda-ok   { background: rgba(124,232,160,0.12); color: var(--green); }
+  .deuda-vos  { background: rgba(232,124,124,0.12); color: var(--red); }
+  .deuda-ella { background: rgba(124,232,160,0.12); color: var(--green); }
 
   .list-title {
     font-size: 13px;
@@ -229,6 +203,14 @@
     text-transform: uppercase;
     letter-spacing: 0.8px;
     margin-bottom: 10px;
+  }
+
+  .mes-actual-label {
+    font-size: 12px;
+    color: var(--muted);
+    text-align: right;
+    margin-bottom: 8px;
+    margin-top: -4px;
   }
 
   .item-card {
@@ -248,7 +230,6 @@
   .item-left { flex: 1; }
   .item-nombre { font-size: 14px; font-weight: 500; margin-bottom: 2px; }
   .item-meta { font-size: 12px; color: var(--muted); }
-
   .item-right { display: flex; align-items: center; gap: 10px; }
   .item-monto { font-family: var(--serif); font-size: 18px; }
   .item-monto.vos  { color: var(--accent1); }
@@ -275,7 +256,6 @@
     border-radius: 20px;
     font-weight: 500;
   }
-
   .split-pill.vos  { background: rgba(232,168,124,0.15); color: var(--accent1); }
   .split-pill.ella { background: rgba(124,159,232,0.15); color: var(--accent2); }
 
@@ -293,10 +273,8 @@
     color: var(--muted);
     font-size: 14px;
   }
-
   .empty-state span { display: block; font-size: 28px; margin-bottom: 8px; }
 
-  /* ===== CERRAR MES ===== */
   .cerrar-mes-btn {
     width: 100%;
     padding: 13px;
@@ -314,7 +292,6 @@
   }
   .cerrar-mes-btn:active { opacity: 0.75; }
 
-  /* ===== HISTORIAL DE MESES ===== */
   .historial-overlay {
     display: none;
     position: fixed;
@@ -341,7 +318,6 @@
     align-items: center;
     margin-bottom: 20px;
   }
-
   .historial-header h3 { font-family: var(--serif); font-size: 22px; }
 
   .btn-cerrar-sheet {
@@ -380,8 +356,17 @@
     color: var(--muted);
     padding: 3px 0;
   }
-
   .mes-archivado-fila span:last-child { color: var(--text); font-weight: 500; }
+
+  .mes-archivado-pct {
+    font-size: 11px;
+    color: var(--muted);
+    margin-bottom: 8px;
+    padding: 4px 8px;
+    background: rgba(255,255,255,0.04);
+    border-radius: 6px;
+    display: inline-block;
+  }
 
   .mes-archivado-deuda {
     margin-top: 8px;
@@ -392,7 +377,6 @@
     text-align: center;
   }
 
-  /* ===== CONFIRMAR CERRAR MES ===== */
   .confirm-overlay {
     display: none;
     position: fixed;
@@ -414,48 +398,32 @@
     max-width: 360px;
   }
 
-  .confirm-card h3 {
-    font-family: var(--serif);
-    font-size: 22px;
-    margin-bottom: 10px;
-  }
-
-  .confirm-card p {
-    font-size: 14px;
-    color: var(--muted);
-    line-height: 1.6;
-    margin-bottom: 20px;
-  }
-
+  .confirm-card h3 { font-family: var(--serif); font-size: 22px; margin-bottom: 10px; }
+  .confirm-card p { font-size: 14px; color: var(--muted); line-height: 1.6; margin-bottom: 20px; }
   .confirm-btns { display: flex; gap: 10px; }
 
   .btn-cancelar {
-    flex: 1;
-    padding: 12px;
+    flex: 1; padding: 12px;
     border: 1px solid var(--border);
     border-radius: 10px;
     background: transparent;
     color: var(--muted);
     font-family: var(--font);
-    font-size: 14px;
-    font-weight: 600;
+    font-size: 14px; font-weight: 600;
     cursor: pointer;
   }
 
   .btn-confirmar {
-    flex: 1;
-    padding: 12px;
+    flex: 1; padding: 12px;
     border: none;
     border-radius: 10px;
     background: var(--red);
     color: #fff;
     font-family: var(--font);
-    font-size: 14px;
-    font-weight: 600;
+    font-size: 14px; font-weight: 600;
     cursor: pointer;
   }
 
-  /* Config overlay */
   .config-overlay {
     display: none;
     position: fixed;
@@ -464,7 +432,6 @@
     z-index: 100;
     align-items: flex-end;
   }
-
   .config-overlay.open { display: flex; }
 
   .config-sheet {
@@ -478,7 +445,6 @@
   .config-sheet h3 { font-family: var(--serif); font-size: 22px; margin-bottom: 16px; }
   .config-sheet label { font-size: 13px; color: var(--muted); display: block; margin-bottom: 6px; margin-top: 14px; }
 
-  /* Botones fijos abajo */
   .bottom-btns {
     position: fixed;
     bottom: calc(24px + env(safe-area-inset-bottom));
@@ -510,8 +476,7 @@
     background: var(--accent1);
     color: #1a1009;
     font-family: var(--font);
-    font-size: 15px;
-    font-weight: 600;
+    font-size: 15px; font-weight: 600;
     cursor: pointer;
     margin-top: 20px;
   }
@@ -533,11 +498,30 @@
     color: var(--muted);
     font-size: 14px;
   }
+
+  .toast {
+    position: fixed;
+    bottom: calc(90px + env(safe-area-inset-bottom));
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 12px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+    z-index: 500;
+    opacity: 0;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+  }
+  .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 </style>
 </head>
 <body>
 
-<!-- Header -->
 <div class="header">
   <h1>🏠 Gastos en pareja</h1>
   <p><span class="status-dot" id="statusDot"></span><span id="statusText">Conectando...</span></p>
@@ -547,7 +531,6 @@
   ⚠️ Todavía no está configurado Firebase. Los datos no se guardarán entre sesiones.
 </div>
 
-<!-- Porcentaje -->
 <div class="pct-bar">
   <label>División:</label>
   <input type="range" id="pctSlider" min="10" max="90" value="60" oninput="actualizarPct(this.value)">
@@ -555,15 +538,12 @@
   <span class="pct-badge pct-ella" id="badgeElla">Ella 40%</span>
 </div>
 
-<!-- Tabs -->
 <div class="tabs">
   <button class="tab active-fijo" onclick="cambiarTab('fijos')" id="tabFijos">🏠 Gastos fijos</button>
   <button class="tab" onclick="cambiarTab('variables')" id="tabVars">🛒 Variables</button>
 </div>
 
-<!-- ===== SECCIÓN FIJOS ===== -->
 <div class="section active" id="secFijos">
-
   <div class="form-card">
     <div class="form-title">Agregar gasto fijo</div>
     <div class="form-row">
@@ -575,7 +555,7 @@
     <button class="btn-add btn-fijo" onclick="agregarFijo()">+ Agregar gasto fijo</button>
   </div>
 
-  <div class="balance-card balance-fijo" id="balanceFijos">
+  <div class="balance-card balance-fijo">
     <div class="balance-title">Balance — Gastos fijos</div>
     <div class="balance-row">
       <span class="balance-name vos" id="labelFijoVos">Vos</span>
@@ -589,14 +569,13 @@
   </div>
 
   <div class="list-title">Gastos del mes</div>
+  <div class="mes-actual-label" id="mesActualLabel"></div>
   <div id="listaFijos"><div class="empty-state"><span>🏠</span>Todavía no hay gastos fijos</div></div>
 
   <button class="cerrar-mes-btn" onclick="confirmarCerrarMes()">📦 Cerrar mes y empezar de cero</button>
 </div>
 
-<!-- ===== SECCIÓN VARIABLES ===== -->
 <div class="section" id="secVars">
-
   <div class="form-card">
     <div class="form-title">Agregar gasto variable</div>
     <div class="form-row">
@@ -612,8 +591,8 @@
     <button class="btn-add btn-var" onclick="agregarVariable()">+ Agregar gasto variable</button>
   </div>
 
-  <div class="balance-card balance-var" id="balanceVars">
-    <div class="balance-title">Balance — Gastos variables</div>
+  <div class="balance-card balance-var">
+    <div class="balance-title">Cuenta corriente — Variables</div>
     <div class="balance-row">
       <span class="balance-name vos" id="labelVarVos">Vos</span>
       <span class="balance-amount vos" id="totalVarVos">$0</span>
@@ -625,21 +604,19 @@
     <div class="deuda-box deuda-ok" id="deudaVars">Sin gastos aún</div>
   </div>
 
-  <div class="list-title">Historial del mes</div>
+  <div class="list-title">Historial completo</div>
   <div id="listaVars"><div class="empty-state"><span>🛒</span>Todavía no hay gastos variables</div></div>
 </div>
 
-<!-- Botones flotantes -->
 <div class="bottom-btns">
-  <button class="btn-historial" onclick="abrirHistorial()" title="Ver meses anteriores">📅</button>
+  <button class="btn-historial" onclick="abrirHistorial()" title="Ver meses anteriores de gastos fijos">📅</button>
   <button class="btn-config" onclick="abrirConfig()" title="Configuración">⚙️</button>
 </div>
 
-<!-- Confirmar cerrar mes -->
 <div class="confirm-overlay" id="confirmOverlay">
   <div class="confirm-card">
     <h3>📦 Cerrar mes</h3>
-    <p>Se va a guardar un resumen del mes actual en el historial y se van a borrar todos los gastos para empezar de cero. ¿Confirmás?</p>
+    <p>Se va a guardar un resumen de los gastos fijos de este mes en el historial y se van a borrar para empezar de cero.<br><br><strong>Los gastos variables no se tocan.</strong></p>
     <div class="confirm-btns">
       <button class="btn-cancelar" onclick="cerrarConfirm()">Cancelar</button>
       <button class="btn-confirmar" onclick="cerrarMes()">Cerrar mes</button>
@@ -647,18 +624,16 @@
   </div>
 </div>
 
-<!-- Historial de meses -->
 <div class="historial-overlay" id="historialOverlay" onclick="cerrarHistorialClick(event)">
   <div class="historial-sheet">
     <div class="historial-header">
-      <h3>📅 Meses anteriores</h3>
+      <h3>📅 Historial de fijos</h3>
       <button class="btn-cerrar-sheet" onclick="cerrarHistorial()">✕</button>
     </div>
     <div id="historialContenido"><div class="loading-historial">Cargando...</div></div>
   </div>
 </div>
 
-<!-- Config sheet -->
 <div class="config-overlay" id="configOverlay" onclick="cerrarConfig(event)">
   <div class="config-sheet">
     <h3>Configuración</h3>
@@ -670,6 +645,8 @@
     <p style="font-size:12px;color:var(--muted);margin-top:14px;text-align:center">Los datos se sincronizan automáticamente 🔄</p>
   </div>
 </div>
+
+<div class="toast" id="toast"></div>
 
 <script>
 const firebaseConfig = {
@@ -697,6 +674,7 @@ let variables = [];
 let pctVos = 60;
 let nombreVos = "Vos";
 let nombreElla = "Ella";
+let mesActivoFijosId = null;
 
 const mesId = () => {
   const d = new Date();
@@ -711,7 +689,13 @@ const nombreMes = (id) => {
   return fecha.toLocaleDateString('es-AR', { month: 'long', year: 'numeric' });
 };
 
-// ======== FIREBASE ========
+function mostrarToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 3000);
+}
+
 async function cargarDatos() {
   if (!firebaseOk) {
     document.getElementById('noFirebaseMsg').style.display = 'block';
@@ -730,18 +714,18 @@ async function cargarDatos() {
       pctVos = cfg.pctVos || 60;
       nombreVos = cfg.nombreVos || 'Vos';
       nombreElla = cfg.nombreElla || 'Ella';
+      mesActivoFijosId = cfg.mesActivoFijosId || null;
       document.getElementById('pctSlider').value = pctVos;
       actualizarPct(pctVos, false);
     }
 
-    db.collection('gastos').doc(mesId()).collection('fijos')
-      .orderBy('fecha', 'desc')
-      .onSnapshot(snap => {
-        fijos = snap.docs.map(d => ({ id: d.id, ...d.data() }));
-        renderFijos();
-      });
+    if (!mesActivoFijosId) {
+      await migrarDatosExistentes();
+    }
 
-    db.collection('gastos').doc(mesId()).collection('variables')
+    escucharFijos();
+
+    db.collection('variables_permanente')
       .orderBy('fecha', 'desc')
       .onSnapshot(snap => {
         variables = snap.docs.map(d => ({ id: d.id, ...d.data() }));
@@ -757,32 +741,105 @@ async function cargarDatos() {
   }
 }
 
+async function migrarDatosExistentes() {
+  try {
+    const candidatos = [];
+    const hoy = new Date();
+    for (let i = 0; i < 6; i++) {
+      const d = new Date(hoy.getFullYear(), hoy.getMonth() - i, 1);
+      candidatos.push(`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}`);
+    }
+
+    let fijosMigrados = [];
+    let varsMigradas = [];
+    let mesEncontrado = null;
+
+    for (const cand of candidatos) {
+      const fijoSnap = await db.collection('gastos').doc(cand).collection('fijos').get();
+      const varSnap  = await db.collection('gastos').doc(cand).collection('variables').get();
+
+      if (!fijoSnap.empty || !varSnap.empty) {
+        if (!mesEncontrado) mesEncontrado = cand;
+        fijosMigrados = [...fijosMigrados, ...fijoSnap.docs.map(d => d.data())];
+        varsMigradas  = [...varsMigradas,  ...varSnap.docs.map(d => d.data())];
+      }
+    }
+
+    mesActivoFijosId = mesEncontrado || mesId();
+
+    if (fijosMigrados.length > 0) {
+      const batch = db.batch();
+      fijosMigrados.forEach(item => {
+        const ref = db.collection('fijos_mes').doc(mesActivoFijosId).collection('items').doc();
+        batch.set(ref, item);
+      });
+      await batch.commit();
+    }
+
+    if (varsMigradas.length > 0) {
+      const batch2 = db.batch();
+      varsMigradas.forEach(item => {
+        const ref = db.collection('variables_permanente').doc();
+        batch2.set(ref, item);
+      });
+      await batch2.commit();
+    }
+
+    await db.collection('config').doc('general').set(
+      { mesActivoFijosId, pctVos, nombreVos, nombreElla },
+      { merge: true }
+    );
+
+    if (fijosMigrados.length > 0 || varsMigradas.length > 0) {
+      mostrarToast(`✅ Datos recuperados (${fijosMigrados.length} fijos, ${varsMigradas.length} variables)`);
+    }
+
+  } catch(e) {
+    console.error('Error en migración:', e);
+    mesActivoFijosId = mesId();
+  }
+}
+
+function escucharFijos() {
+  if (!mesActivoFijosId) mesActivoFijosId = mesId();
+  document.getElementById('mesActualLabel').textContent = nombreMes(mesActivoFijosId);
+
+  db.collection('fijos_mes').doc(mesActivoFijosId).collection('items')
+    .orderBy('fecha', 'desc')
+    .onSnapshot(snap => {
+      fijos = snap.docs.map(d => ({ id: d.id, ...d.data() }));
+      renderFijos();
+    });
+}
+
 async function guardarFijo(item) {
   if (!firebaseOk) return;
-  await db.collection('gastos').doc(mesId()).collection('fijos').add(item);
+  await db.collection('fijos_mes').doc(mesActivoFijosId).collection('items').add(item);
 }
 
 async function guardarVariable(item) {
   if (!firebaseOk) return;
-  await db.collection('gastos').doc(mesId()).collection('variables').add(item);
+  await db.collection('variables_permanente').add(item);
 }
 
 async function borrarFijo(id) {
   if (!firebaseOk) { fijos = fijos.filter(f => f.id !== id); renderFijos(); return; }
-  await db.collection('gastos').doc(mesId()).collection('fijos').doc(id).delete();
+  await db.collection('fijos_mes').doc(mesActivoFijosId).collection('items').doc(id).delete();
 }
 
 async function borrarVariable(id) {
   if (!firebaseOk) { variables = variables.filter(v => v.id !== id); renderVars(); return; }
-  await db.collection('gastos').doc(mesId()).collection('variables').doc(id).delete();
+  await db.collection('variables_permanente').doc(id).delete();
 }
 
 async function guardarConfigFirebase() {
   if (!firebaseOk) return;
-  await db.collection('config').doc('general').set({ pctVos, nombreVos, nombreElla });
+  await db.collection('config').doc('general').set(
+    { pctVos, nombreVos, nombreElla, mesActivoFijosId },
+    { merge: true }
+  );
 }
 
-// ======== CERRAR MES ========
 function confirmarCerrarMes() {
   document.getElementById('confirmOverlay').classList.add('open');
 }
@@ -793,10 +850,8 @@ function cerrarConfirm() {
 
 async function cerrarMes() {
   if (!firebaseOk) { alert('Sin conexión a Firebase'); return; }
-
   cerrarConfirm();
 
-  // Calcular totales actuales
   const pctElla = 100 - pctVos;
   let totalFijoVos = 0, totalFijoElla = 0;
   fijos.forEach(f => {
@@ -804,54 +859,44 @@ async function cerrarMes() {
     totalFijoElla += f.monto * pctElla / 100;
   });
 
-  let totalVarVos = 0, totalVarElla = 0;
-  variables.forEach(v => {
-    if (v.quien === 'vos') totalVarVos += v.monto;
-    else totalVarElla += v.monto;
-  });
-
-  // Armar resumen
   const resumen = {
-    mesId: mesId(),
+    mesId: mesActivoFijosId,
     fechaCierre: new Date().toISOString(),
     pctVos,
+    pctElla,
     nombreVos,
     nombreElla,
-    fijos: fijos.map(f => ({ nombre: f.nombre, monto: f.monto })),
-    variables: variables.map(v => ({ nombre: v.nombre, monto: v.monto, quien: v.quien })),
+    items: fijos.map(f => ({ nombre: f.nombre, monto: f.monto })),
     totales: {
       fijoVos: totalFijoVos,
       fijoElla: totalFijoElla,
-      varVos: totalVarVos,
-      varElla: totalVarElla,
+      total: totalFijoVos + totalFijoElla
     }
   };
 
-  // Guardar en historial
-  await db.collection('historial').doc(mesId()).set(resumen);
+  await db.collection('historial_fijos').doc(mesActivoFijosId).set(resumen);
 
-  // Borrar gastos del mes actual
+  const snap = await db.collection('fijos_mes').doc(mesActivoFijosId).collection('items').get();
   const batch = db.batch();
-
-  const fijosDocs = await db.collection('gastos').doc(mesId()).collection('fijos').get();
-  fijosDocs.forEach(d => batch.delete(d.ref));
-
-  const varsDocs = await db.collection('gastos').doc(mesId()).collection('variables').get();
-  varsDocs.forEach(d => batch.delete(d.ref));
-
+  snap.forEach(d => batch.delete(d.ref));
   await batch.commit();
 
-  alert('✅ Mes cerrado. Pueden empezar a cargar el mes nuevo.');
+  const [anio, mes] = mesActivoFijosId.split('-').map(Number);
+  const siguiente = new Date(anio, mes, 1);
+  mesActivoFijosId = `${siguiente.getFullYear()}-${String(siguiente.getMonth()+1).padStart(2,'0')}`;
+
+  await guardarConfigFirebase();
+  escucharFijos();
+  mostrarToast('✅ Mes cerrado. ¡Arrancá el nuevo!');
 }
 
-// ======== HISTORIAL ========
 async function abrirHistorial() {
   document.getElementById('historialOverlay').classList.add('open');
   const contenido = document.getElementById('historialContenido');
   contenido.innerHTML = '<div class="loading-historial">Cargando historial...</div>';
 
   try {
-    const snap = await db.collection('historial').orderBy('fechaCierre', 'desc').get();
+    const snap = await db.collection('historial_fijos').orderBy('fechaCierre', 'desc').get();
 
     if (snap.empty) {
       contenido.innerHTML = '<div class="loading-historial">Todavía no hay meses cerrados.</div>';
@@ -863,29 +908,29 @@ async function abrirHistorial() {
       const nv = d.nombreVos || 'Vos';
       const ne = d.nombreElla || 'Ella';
       const t = d.totales;
-      const diffFijo = t.fijoVos - t.fijoElla;
-      const diffVar = t.varVos - t.varElla;
-      const diffTotal = (t.fijoVos + t.varVos) - (t.fijoElla + t.varElla);
+      const diff = t.fijoVos - t.fijoElla;
 
-      const deudaColor = Math.abs(diffTotal) < 1 ? 'deuda-ok' : (diffTotal > 0 ? 'deuda-ella' : 'deuda-vos');
-      const deudaTexto = Math.abs(diffTotal) < 1
+      const deudaColor = Math.abs(diff) < 1 ? 'deuda-ok' : (diff > 0 ? 'deuda-ella' : 'deuda-vos');
+      const deudaTexto = Math.abs(diff) < 1
         ? '✓ Quedaron iguales'
-        : diffTotal > 0
-          ? `${ne} le debía ${fmt(Math.abs(diffTotal))} a ${nv}`
-          : `${nv} le debía ${fmt(Math.abs(diffTotal))} a ${ne}`;
+        : diff > 0
+          ? `${ne} le debía ${fmt(Math.abs(diff))} a ${nv}`
+          : `${nv} le debía ${fmt(Math.abs(diff))} a ${ne}`;
+
+      const itemsHtml = (d.items || []).map(it =>
+        `<div class="mes-archivado-fila"><span>${it.nombre}</span><span>${fmt(it.monto)}</span></div>`
+      ).join('');
 
       return `
         <div class="mes-archivado">
           <div class="mes-archivado-titulo">📅 ${nombreMes(d.mesId)}</div>
-          <div class="mes-archivado-fila"><span>Fijos — ${nv}</span><span>${fmt(t.fijoVos)}</span></div>
-          <div class="mes-archivado-fila"><span>Fijos — ${ne}</span><span>${fmt(t.fijoElla)}</span></div>
-          <div class="mes-archivado-fila"><span>Variables — ${nv}</span><span>${fmt(t.varVos)}</span></div>
-          <div class="mes-archivado-fila"><span>Variables — ${ne}</span><span>${fmt(t.varElla)}</span></div>
-          <div class="mes-archivado-fila" style="border-top:1px solid var(--border);margin-top:8px;padding-top:8px;font-weight:600">
-            <span>Total ${nv}</span><span style="color:var(--accent1)">${fmt(t.fijoVos + t.varVos)}</span>
+          <span class="mes-archivado-pct">División: ${nv} ${d.pctVos}% · ${ne} ${d.pctElla}%</span>
+          ${itemsHtml}
+          <div class="mes-archivado-fila" style="border-top:1px solid var(--border);margin-top:8px;padding-top:8px">
+            <span>Corresponde a ${nv}</span><span style="color:var(--accent1)">${fmt(t.fijoVos)}</span>
           </div>
-          <div class="mes-archivado-fila" style="font-weight:600">
-            <span>Total ${ne}</span><span style="color:var(--accent2)">${fmt(t.fijoElla + t.varElla)}</span>
+          <div class="mes-archivado-fila">
+            <span>Corresponde a ${ne}</span><span style="color:var(--accent2)">${fmt(t.fijoElla)}</span>
           </div>
           <div class="mes-archivado-deuda deuda-box ${deudaColor}">${deudaTexto}</div>
         </div>`;
@@ -904,7 +949,6 @@ function cerrarHistorialClick(e) {
   if (e.target === document.getElementById('historialOverlay')) cerrarHistorial();
 }
 
-// ======== UI ========
 function actualizarPct(val, guardar = true) {
   pctVos = parseInt(val);
   const pctElla = 100 - pctVos;
